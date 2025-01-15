@@ -6,7 +6,7 @@ const MainNavBar = () => {
   return (
     <>
       <nav className="bg-gray-600 border-gray-200">
-        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl py-3">
           <a
             href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -24,21 +24,21 @@ const MainNavBar = () => {
           <div className="flex items-center">
             <ul className="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/"
                   className="text-gray-900  hover:underline"
                   aria-current="page"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/posts"
                   className="text-gray-900 hover:underline"
                 >
-                  Company
-                </a>
+                  Post
+                </Link>
               </li>
               <li>
                 <a

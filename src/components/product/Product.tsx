@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import CardText from "../card/CardText";
 
 interface Book {
@@ -27,7 +28,7 @@ const Product = () => {
   }, []);
 
   return (
-    <div className="container max-w-screen-xl mx-auto">
+    <>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 pt-5">
         {data.map((item) => (
           <CardText
@@ -38,8 +39,8 @@ const Product = () => {
           />
         ))}
       </div>
-    </div>
+    </>
   );
-}
+};
 
 export default Product;
