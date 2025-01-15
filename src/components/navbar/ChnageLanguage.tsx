@@ -1,4 +1,4 @@
-import i18n from "../../utils/i18n";
+import i18n from "../../services/i18n.service";
 import { useState } from "react";
 
 import Cambodai_Flag from "../../assets/logo/cambodai-flags.png";
