@@ -4,12 +4,14 @@ import { useState } from "react";
 import Cambodai_Flag from "../../assets/logo/cambodai-flags.png";
 import English_Flag from "../../assets/logo/english-flags.png";
 
-const Language = () => {
+const ChnageLanguage = () => {
   const [language, setLanguage] = useState<string>("km");
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleChangeLanguage = (lang: string) => {
     i18n.changeLanguage(lang);
     setLanguage(lang);
+    setIsOpen(false);
   };
 
   return (
@@ -42,4 +44,4 @@ const Language = () => {
   );
 };
 
-export default Language;
+export default ChnageLanguage;

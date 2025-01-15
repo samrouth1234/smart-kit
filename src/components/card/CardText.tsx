@@ -6,7 +6,7 @@ interface CardTextProps {
   body: string;
 }
 
-const CardText = ({ id, title, body }: CardTextProps) => {
+const CardText = ({ title, body }: CardTextProps) => {
   return (
     <div className="max-w-sm p-3 bg-white border border-gray-200 rounded-lg shadow">
       <div>

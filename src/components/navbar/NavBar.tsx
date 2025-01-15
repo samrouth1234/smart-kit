@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import ImageLogo from "../../assets/images/user-placeholder.jpg";
-import Language from "./Language";
+import ChnageLanguage from "./ChnageLanguage";
 
 const MainNavBar = () => {
   return (
@@ -16,7 +16,7 @@ const MainNavBar = () => {
               UKNC
             </span>
           </a>
-          <Language/>
+          <ChnageLanguage/>
         </div>
       </nav>
       <nav className="border">
