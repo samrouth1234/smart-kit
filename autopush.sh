@@ -20,8 +20,8 @@ read -p "Please enter a commit message: " message
 git commit -m "$message"
 
 # Push the changes to the remote repository
-read -p "Please enter your branch name: " branch
 echo "============================================================================================================"
+read -p "Please enter your branch name: " branch
 git push origin "$branch"
 
 echo "============================================================================================================"
