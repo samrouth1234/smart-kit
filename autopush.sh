@@ -3,7 +3,6 @@
 # Ask the user if they want to add all changes or a specific file
 echo "============================================================================================================"
 read -p "Do you want to add all changes or add a specific file? (all/file): " choice
-echo "============================================================================================================"
 # Add all changes or a specific file based on the user's choice
 if [ "$choice" = "all" ]; then
   git add .
@@ -16,8 +15,8 @@ else
 fi
 
 # Read the commit message from the user
-read -p "Please enter a commit message: " message
 echo "============================================================================================================"
+read -p "Please enter a commit message: " message
 git commit -m "$message"
 
 # Push the changes to the remote repository
