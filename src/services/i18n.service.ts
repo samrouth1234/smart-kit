@@ -10,11 +10,11 @@ i18n
   .init({
     supportedLngs: ["en", "kh"], // Supported languages
     fallbackLng: "en",           // Fallback language
-    debug: true,                 // Debugging
-    detection: {
-      order: ["localStorage", "navigator"],
-      caches: ["localStorage"],
-    },
+    // debug: true,                 // Debugging
+    // detection: {
+    //   order: ["localStorage", "navigator"],
+    //   caches: ["localStorage"],
+    // },
     backend: {
       loadPath: "/locales/{{lng}}.json", // Ensure the path matches your translation file location
     },

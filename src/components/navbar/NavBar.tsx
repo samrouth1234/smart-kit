@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import ImageLogo from "../../assets/images/user-placeholder.jpg";
 import ChnageLanguage from "./ChnageLanguage";
+import UserProfile from "./UserProfile";
 
 const MainNavBar = () => {
   return (
     <>
       <nav className="bg-gray-600 border-gray-200">
-        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl py-3">
+        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl py-3 px-4">
           <a
             href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -16,7 +17,10 @@ const MainNavBar = () => {
               UKNC
             </span>
           </a>
-          <ChnageLanguage/>
+          <div className="flex items-center space-x-5">
+            <ChnageLanguage />
+            <UserProfile/>
+          </div>
         </div>
       </nav>
       <nav className="border">
@@ -33,26 +37,17 @@ const MainNavBar = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/posts"
-                  className="text-gray-900 hover:underline"
-                >
+                <Link to="/posts" className="text-gray-900 hover:underline">
                   Post
                 </Link>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-gray-900  hover:underline"
-                >
+                <a href="#" className="text-gray-900  hover:underline">
                   Team
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-gray-900  hover:underline"
-                >
+                <a href="#" className="text-gray-900  hover:underline">
                   Features
                 </a>
               </li>
