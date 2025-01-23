@@ -6,7 +6,7 @@ import UserProfile from "./UserProfile";
 const MainNavBar = () => {
   return (
     <>
-      <nav className="bg-gray-600 border-gray-200">
+      <nav className="bg-gray-900 border-gray-200">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl py-3 px-4">
           <a
             href="/"
