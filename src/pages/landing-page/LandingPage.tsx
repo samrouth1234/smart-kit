@@ -1,9 +1,14 @@
+import CardCategory from "../../components/card/CardCategory";
 
 const LandingPage = () => {
-
   return (
     <div>
-      <h1>sdfa</h1>
+      <CardCategory/>
+      <CardCategory/>
+      <CardCategory/>
+      <CardCategory/>
+      <CardCategory/>
+      
     </div>
   );
 };
