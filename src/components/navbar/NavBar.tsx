@@ -42,9 +42,9 @@ const MainNavBar = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-900  hover:underline">
-                  Team
-                </a>
+                <Link to="/form" className="text-gray-900  hover:underline">
+                  Form
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-gray-900  hover:underline">

@@ -9,7 +9,7 @@ i18n
   .use(initReactI18next)
   .init({
     supportedLngs: ["en", "kh"], // Supported languages
-    fallbackLng: "en",           // Fallback language
+    fallbackLng: "en", // Fallback language
     // debug: true,                 // Debugging
     // detection: {
     //   order: ["localStorage", "navigator"],
@@ -21,6 +21,10 @@ i18n
     react: {
       useSuspense: false, // Disable suspense for easier debugging
     },
+  })
+  .then(() => {
+    // Set Khmer as the default language on page refresh
+    i18n.changeLanguage("kh");
   });
 
 export default i18n;

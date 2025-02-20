@@ -7,9 +7,9 @@ const AppLayout = () => {
   return (
     <>
       <MainNavBar />
-      <div className="container mx-auto max-w-screen-xl relative flex flex-grow flex-col sm:bg-white">
-        <Outlet />
-      </div>
+        <div className="container mx-auto max-w-screen-xl relative flex flex-grow flex-col">
+          <Outlet />
+        </div>
       <Footer />
     </>
   );
