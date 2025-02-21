@@ -8,7 +8,6 @@ const LandingPage = () => {
       <CardCategory/>
       <CardCategory/>
       <CardCategory/>
-      
     </div>
   );
 };

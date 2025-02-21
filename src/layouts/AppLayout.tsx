@@ -5,13 +5,13 @@ import Footer from "../components/footer/Footer";
 
 const AppLayout = () => {
   return (
-    <>
+    <div>
       <MainNavBar />
         <div className="container mx-auto max-w-screen-xl relative flex flex-grow flex-col">
           <Outlet />
         </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

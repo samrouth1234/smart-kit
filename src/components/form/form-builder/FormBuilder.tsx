@@ -1,36 +1,52 @@
 import { useState } from "react";
+import Dialog from "./Dialog";
 
 interface FormField {
   id: number;
   type: "text" | "number" | "image" | "radio";
+  label: string;
+  placeholder: string;
   value: string | File | null | number;
 }
 
 const FormBuilder = () => {
   const [fields, setFields] = useState<FormField[]>([]);
+  const [dialogs, setDialogs] = useState<boolean>(false);
 
   /**
-   * it is used to handle the add field
-   * @returns void
+   * Handle adding a new field using the type selected from the dialog.
+   * @param selectedType - The field type chosen in the dialog.
+   * @param label - The custom label for the field.
+   * @param placeholder - The custom placeholder for the field.
    */
-  const handleAddField = () => {
-    const newField: FormField = { id: Date.now(), type: "text", value: "" };
+  const handleAddField = (
+    selectedType: FormField["type"],
+    label: string,
+    placeholder: string
+  ) => {
+    const newField: FormField = {
+      id: Date.now(),
+      label,
+      placeholder,
+      type: selectedType,
+      value: selectedType === "image" ? null : "",
+    };
     setFields([...fields, newField]);
+    setDialogs(false);
   };
 
   /**
-   * it is used to handle the remove field
-   * @param id
+   * Handle removing a field.
+   * @param id - The id of the field to remove.
    */
   const handleRemoveField = (id: number) => {
     setFields(fields.filter((field) => field.id !== id));
   };
 
   /**
-   * it is used to handle the type change
-   * @param id
-   * @param newType
-   * @returns void
+   * Handle changing the field type.
+   * @param id - The id of the field.
+   * @param newType - The new field type.
    */
   const handleTypeChange = (id: number, newType: FormField["type"]) => {
     setFields(
@@ -42,11 +58,10 @@ const FormBuilder = () => {
     );
   };
 
-  /***
-   * funciton using to handle the value change
-   * @param id
-   * @param event
-   * @returns void
+  /**
+   * Handle the value change of a field.
+   * @param id - The id of the field.
+   * @param event - The change event.
    */
   const handleValueChange = (
     id: number,
@@ -69,9 +84,8 @@ const FormBuilder = () => {
   };
 
   /**
-   * it is used to handle the form submit
-   * @param event
-   * @returns void
+   * Handle form submission.
+   * @param event - The form event.
    */
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -79,12 +93,13 @@ const FormBuilder = () => {
   };
 
   return (
-    <>
+    <div>
       <form onSubmit={handleSubmit} className="p-4">
         <h2 className="text-xl font-bold mb-4">Dynamic Input Fields</h2>
         {fields.length > 0 ? (
           fields.map((field) => (
             <div key={field.id} className="mb-4">
+              <div className="mb-1 font-bold">{field.label}</div>
               <select
                 value={field.type}
                 onChange={(e) =>
@@ -116,6 +131,7 @@ const FormBuilder = () => {
               ) : (
                 <input
                   type={field.type}
+                  placeholder={field.placeholder}
                   value={field.value as string}
                   onChange={(e) => handleValueChange(field.id, e)}
                   className="p-1 border rounded"
@@ -136,7 +152,7 @@ const FormBuilder = () => {
         <div className="mt-4 space-x-2">
           <button
             type="button"
-            onClick={handleAddField}
+            onClick={() => setDialogs(true)}
             className="bg-blue-500 text-white p-2 rounded"
           >
             Add Field
@@ -146,7 +162,12 @@ const FormBuilder = () => {
           </button>
         </div>
       </form>
-    </>
+      <Dialog
+        isOpen={dialogs}
+        onClose={() => setDialogs(false)}
+        onConfirm={handleAddField}
+      />
+    </div>
   );
 };
 
